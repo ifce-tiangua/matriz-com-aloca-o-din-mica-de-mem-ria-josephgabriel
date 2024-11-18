@@ -10,8 +10,10 @@ int main() {
     scanf("%d", &C);
 
     if (L == 0 || C == 0){
+        
         printf("[matriz vazia]");
-        return ;
+        return 0;
+        
     }else{
 
     matriz = (int **)malloc(L * sizeof(int*));
