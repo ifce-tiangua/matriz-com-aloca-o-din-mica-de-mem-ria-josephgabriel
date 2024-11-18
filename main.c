@@ -3,7 +3,7 @@
 
 int main() {
 
-    int L, C, *matriz;
+    int L, C, **matriz;
 
     scanf("%d", &L);
 
@@ -11,26 +11,32 @@ int main() {
 
     if (L == 0 || C == 0){
         printf("[matriz vazia]");
-        return 1;
-
+        return ;
     }else{
 
-    matriz = malloc(L * C * sizeof(int));
+    matriz = (int **)malloc(L * sizeof(int*));
 
+    for (int i = 0; i < L; i++) {
+        matriz[i] = (int*)malloc(C * sizeof(int));
+    }
 
     for (int i = 0; i < L; i++) {
         for (int j = 0; j < C; j++) {
 
-            scanf("%d", &matriz[i * C + j]);
+            scanf("%d", &matriz[i][j]);
         }
     }
 
     for (int i = 0; i < L; i++) {
         for (int j = 0; j < C; j++) {
-            printf("%d ", matriz[i * C + j]);
+            printf("%d ", matriz[i][j]);
         }
         printf("\n");
     }
+    }
+
+    for (int i = 0; i < L; i++) {
+        free(matriz[i]);
     }
 
     free(matriz);
