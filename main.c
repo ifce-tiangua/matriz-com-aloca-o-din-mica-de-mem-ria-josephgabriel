@@ -1,30 +1,40 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-//Bem-vindo ao Exercício "Vetor Dinâmico"
+int main() {
 
-//Neste exercício, você vai escrever um programa que:
+    int L, C;
 
-int main()
-{
-	int i;
-	int valor;
-	int t; //Leia o tamanho de um vetor
+    scanf("%d", &L);
 
-	printf("Digite  tamanho do vetor: ");
-	scanf("%d", &t);
+    scanf("%d", &C);
 
-	int*p = (int*)malloc(t*sizeof(int)); //Aloque dinamicamente a memória para o vetor
 
-    for(i=0; i<t; i++){
-       printf("digite os dados do vetor %d: ", i);//Leia os dados de um vetor
-       scanf("%d", &p[i]);
-	}
+    int **matriz = (int **)malloc(L * sizeof(int*));
 
-    for(i=0; i<t; i++){
-    	printf("[%d] = %d\n",i, p[i]); //Apresente os dados do vetor
-	}
+    for (int i = 0; i < L; i++) {
+        matriz[i] = (int*)malloc(C * sizeof(int));
+    }
 
-      free(p); //Desaloque a memória alocada anteriormente
+    for (int i = 0; i < L; i++) {
+        for (int j = 0; j < C; j++) {
 
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+
+    for (int i = 0; i < L; i++) {
+        for (int j = 0; j < C; j++) {
+            printf("%d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+
+    for (int i = 0; i < L; i++) {
+        free(matriz[i]);
+    }
+	
+    free(matriz);
+
+    return 0;
 }
