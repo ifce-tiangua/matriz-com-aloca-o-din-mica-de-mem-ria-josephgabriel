@@ -11,6 +11,12 @@ int main() {
 
     matriz = malloc(L * C * sizeof(int));
 
+    if (L == 0 || C == 0){
+        printf("[matriz vazia]");
+        return 1;
+
+    }else{
+
 
     for (int i = 0; i < L; i++) {
         for (int j = 0; j < C; j++) {
@@ -24,6 +30,7 @@ int main() {
             printf("%d ", matriz[i * C + j]);
         }
         printf("\n");
+    }
     }
 
     free(matriz);
