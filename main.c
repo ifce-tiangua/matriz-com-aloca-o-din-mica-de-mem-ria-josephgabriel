@@ -2,44 +2,41 @@
 #include <stdlib.h>
 
 int main() {
+    int L, C, *matriz;
 
-    int L, C, **matriz;
 
     scanf("%d", &L);
-
     scanf("%d", &C);
 
-    if (L == 0 || C == 0){
-        
-        printf("[matriz vazia]");
-        return 0;
-        
-    }else{
 
-    matriz = (int **)malloc(L * sizeof(int*));
+    matriz = malloc(L * C * sizeof(int));
 
-    for (int i = 0; i < L; i++) {
-        matriz[i] = (int*)malloc(C * sizeof(int));
-    }
 
-    for (int i = 0; i < L; i++) {
-        for (int j = 0; j < C; j++) {
+    if (L == 0 || C == 0) {
+        printf("[matriz vazia]\n");
+        free(matriz);
+        return 1;
+    } else {
 
-            scanf("%d", &matriz[i][j]);
+        for (int i = 0; i < L; i++) {
+            for (int j = 0; j < C; j++) {
+                scanf("%d", &matriz[i * C + j]);
+            }
+        }
+
+
+        for (int i = 0; i < L; i++) {
+            for (int j = 0; j < C; j++) {
+
+                printf("%d", matriz[i * C + j]);
+                if (j < C - 1) {
+                    printf(" ");
+                }
+            }
+            printf("\n");
         }
     }
 
-    for (int i = 0; i < L; i++) {
-        for (int j = 0; j < C; j++) {
-            printf("%d ", matriz[i][j]);
-        }
-        printf("\n");
-    }
-    }
-
-    for (int i = 0; i < L; i++) {
-        free(matriz[i]);
-    }
 
     free(matriz);
 
