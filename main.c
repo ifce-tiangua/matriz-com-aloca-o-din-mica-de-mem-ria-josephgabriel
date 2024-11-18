@@ -3,14 +3,13 @@
 
 int main() {
 
-    int L, C;
+    int L, C, **matriz;
 
     scanf("%d", &L);
 
     scanf("%d", &C);
 
-
-    int **matriz = (int **)malloc(L * sizeof(int*));
+    matriz = (int **)malloc(L * sizeof(int*));
 
     for (int i = 0; i < L; i++) {
         matriz[i] = (int*)malloc(C * sizeof(int));
@@ -25,7 +24,7 @@ int main() {
 
     for (int i = 0; i < L; i++) {
         for (int j = 0; j < C; j++) {
-            printf("%d ", matriz[i][j]);
+            printf("%d", matriz[i][j]);
         }
         printf("\n");
     }
