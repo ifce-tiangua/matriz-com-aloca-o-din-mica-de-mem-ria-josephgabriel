@@ -9,13 +9,13 @@ int main() {
 
     scanf("%d", &C);
 
-    matriz = malloc(L * C * sizeof(int));
-
     if (L == 0 || C == 0){
         printf("[matriz vazia]");
         return 1;
 
     }else{
+
+    matriz = malloc(L * C * sizeof(int));
 
 
     for (int i = 0; i < L; i++) {
