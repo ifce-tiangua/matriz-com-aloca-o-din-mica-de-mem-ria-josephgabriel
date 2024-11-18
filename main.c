@@ -9,7 +9,7 @@ int main() {
 
     scanf("%d", &C);
 
-    matriz = (int *)malloc(L * C * sizeof(int));
+    matriz = malloc(L * C * sizeof(int));
 
 
     for (int i = 0; i < L; i++) {
