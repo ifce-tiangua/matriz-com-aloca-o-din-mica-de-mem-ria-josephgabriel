@@ -11,7 +11,7 @@ int main() {
 
     if (L == 0 || C == 0){
         printf("[matriz vazia]");
-        return 1;
+        return 0;
 
     }else{
 
