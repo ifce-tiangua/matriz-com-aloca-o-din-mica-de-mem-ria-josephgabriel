@@ -13,7 +13,6 @@ int main() {
 
 
     if (matriz == NULL) {
-        printf("Erro na alocação de memória!\n");
         return 1;
     }
 
@@ -44,7 +43,7 @@ int main() {
             }
 
             if (i < L - 1) {
-                printf("\n");
+                printf("\\n");
             }
         }
     }
