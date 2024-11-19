@@ -11,8 +11,15 @@ int main() {
 
     matriz = malloc(L * C * sizeof(int));
 
+
+    if (matriz == NULL) {
+        printf("Erro na alocação de memória!\n");
+        return 1;
+    }
+
+
     if (L == 0 || C == 0) {
-        printf("[matriz vazia]\n");
+        printf("[matriz vazia]");
         free(matriz);
         return 0;
     } else {
