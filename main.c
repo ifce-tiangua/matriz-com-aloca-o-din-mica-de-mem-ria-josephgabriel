@@ -26,6 +26,10 @@ int main() {
                     printf("%d", matriz[i * C + j]);
                     if (j < C - 1) {
                         printf(" ");
+                    }else{
+                        
+                    printf("\\n");
+
                     }
                 }
             }
