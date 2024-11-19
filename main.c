@@ -4,10 +4,18 @@
 int main() {
     int L, C, *matriz;
 
+
     scanf("%d", &L);
     scanf("%d", &C);
 
+
     matriz = malloc(L * C * sizeof(int));
+
+
+    if (matriz == NULL) {
+        printf("Erro na alocação de memória!\n");
+        return 1;
+    }
 
 
     if (L == 0 || C == 0) {
@@ -25,22 +33,22 @@ int main() {
 
         for (int i = 0; i < L; i++) {
             for (int j = 0; j < C; j++) {
-
                 if (i == 0 || i == L - 1 || j == 0 || j == C - 1) {
                     printf("%d", matriz[i * C + j]);
+
 
                     if (j < C - 1) {
                         printf(" ");
                     }
-
-                    if (j == C - 1 && i < L - 1) {
-                        printf("\\n");
-                    }
                 }
             }
+
+            if (i < L - 1) {
+                printf("\\n");
+            }
         }
-        printf("\n");
     }
+
 
     free(matriz);
     return 0;
