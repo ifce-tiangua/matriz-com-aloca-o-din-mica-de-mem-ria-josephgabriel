@@ -11,12 +11,6 @@ int main() {
 
     matriz = malloc(L * C * sizeof(int));
 
-
-    if (matriz == NULL) {
-        return 1;
-    }
-
-
     if (L == 0 || C == 0) {
         printf("[matriz vazia]\n");
         free(matriz);
